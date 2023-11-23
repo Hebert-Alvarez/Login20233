@@ -7,6 +7,7 @@ class RegistroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black87,
         title: Text('Registro'),
       ),
       backgroundColor: Colors.grey[400],
@@ -20,17 +21,15 @@ class RegistroScreen extends StatelessWidget {
               children: [
                 SizedBox(height: 10),
                 Text(
-                  'Bienvenido', // Agregar el título aquí
+                  'Ingrese sus credenciales', // Agregar el título aquí
                   style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                     color: Colors.black87, // Cambia el color del texto a blanco
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-            /*
+            const SizedBox(height: 2),
             const TextField(
               decoration: InputDecoration(
                 labelText: 'Correo Electrónico',
@@ -72,7 +71,7 @@ class RegistroScreen extends StatelessWidget {
               style: TextStyle(
                   color: Colors
                       .black87), // Cambia el color del texto del campo de entrada
-            ),*/
+            ),
             const SizedBox(height: 20),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
@@ -81,23 +80,16 @@ class RegistroScreen extends StatelessWidget {
               ),
               icon: const Icon(Icons.lock_open, size: 32),
               label: const Text(
-                'Iniciar',
+                'Registrar',
                 style: TextStyle(
                     fontSize: 24,
                     color: Colors
                         .black87), // Cambia el color del texto del botón a blanco
               ),
+              //Registro
               onPressed: null,
             ),
             const SizedBox(height: 10),
-            Row(
-              children: [
-                Text(
-                  "Registrar usuario",
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
             const SizedBox(height: 24),
           ],
         ),

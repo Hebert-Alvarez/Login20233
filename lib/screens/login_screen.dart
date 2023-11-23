@@ -84,17 +84,29 @@ class LoginScreen extends StatelessWidget {
                     color: Colors
                         .black87), // Cambia el color del texto del botón a blanco
               ),
+              //Ingresar
               onPressed: null,
             ),
             const SizedBox(height: 10),
-            ElevatedButton(
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size.fromHeight(50),
+                backgroundColor: Colors.grey[700], // Cambia el color del botón
+              ),
+              icon: const Icon(Icons.app_registration_rounded, size: 32),
+              label: const Text(
+                'Registro',
+                style: TextStyle(
+                    fontSize: 24,
+                    color: Colors
+                        .black87), // Cambia el color del texto del botón a blanco
+              ),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => RegistroScreen()),
                 );
               },
-              child: Text('Registrar'),
             ),
             /*Row(
               children: [
