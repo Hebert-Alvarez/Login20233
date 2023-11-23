@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login20233/screens/login_screen.dart';
+import 'package:login20233/screens/registro_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       initialRoute: 'login',
       routes: {
         //(_) -> Contexto de datos
-        'login': (_) => LoginScreen()
+        'login': (_) => LoginScreen(),
+        'registro': (_) => RegistroScreen()
       },
     );
   }

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:login20233/screens/registro_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegistroScreen extends StatelessWidget {
+  const RegistroScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Registro'),
+      ),
       backgroundColor: Colors.grey[400],
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -28,6 +30,7 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
+            /*
             const TextField(
               decoration: InputDecoration(
                 labelText: 'Correo Electrónico',
@@ -69,7 +72,7 @@ class LoginScreen extends StatelessWidget {
               style: TextStyle(
                   color: Colors
                       .black87), // Cambia el color del texto del campo de entrada
-            ),
+            ),*/
             const SizedBox(height: 20),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
@@ -87,26 +90,14 @@ class LoginScreen extends StatelessWidget {
               onPressed: null,
             ),
             const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => RegistroScreen()),
-                );
-              },
-              child: Text('Registrar'),
-            ),
-            /*Row(
+            Row(
               children: [
-                Text("Registrar usuario", textAlign: TextAlign.center,
-                    onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => RegistroScreen()),
-                  );
-                }),
+                Text(
+                  "Registrar usuario",
+                  textAlign: TextAlign.center,
+                ),
               ],
-            ),*/
+            ),
             const SizedBox(height: 24),
           ],
         ),
