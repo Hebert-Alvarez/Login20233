@@ -1,39 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:login20233/screens/check_auth_screen.dart';
+import 'package:login20233/screens/home_screen.dart';
 import 'package:login20233/screens/login_screen.dart';
 import 'package:login20233/screens/registro_screen.dart';
+import 'package:login20233/services/auth_services.dart';
+import 'package:login20233/services/notifications_services.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(AppState());
 
 class AppState extends StatelessWidget {
-  const AppState({super.key});
-
-//Build app
   @override
   Widget build(BuildContext context) {
-    return MyApp();
-    /*return MaterialApp(
-      home: MyApp(),
-    );*/
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthService()),
+      ],
+      child: MyApp(),
+    );
   }
 }
 
-//App structure (?)
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Login',
+      title: 'IQ-Switch App',
       initialRoute: 'login',
       routes: {
-        //(_) -> Contexto de datos
         'login': (_) => LoginScreen(),
-        'registro': (_) => RegistroScreen()
+        'register': (_) => RegisterScreen(),
+        'home': (_) => HomeScreen(),
+        'checking': (_) => CheckAuthScreen()
       },
+      scaffoldMessengerKey: NotificationsService.messengerKey,
+      /*theme: ThemeData.dark().copyWith(
+            scaffoldBackgroundColor: Colors.grey[800],
+            appBarTheme:
+                const AppBarTheme(elevation: 0, color: Colors.redAccent),
+            floatingActionButtonTheme: const FloatingActionButtonThemeData(
+                backgroundColor: Colors.redAccent, elevation: 0))*/
+      theme: ThemeData.light().copyWith(
+          scaffoldBackgroundColor: Colors.black54,
+          appBarTheme: const AppBarTheme(elevation: 0, color: Colors.redAccent),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: Colors.redAccent, elevation: 0)),
     );
   }
 }
